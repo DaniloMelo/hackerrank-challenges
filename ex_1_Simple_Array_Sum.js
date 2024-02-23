@@ -17,7 +17,6 @@ function simpleArraySumExample1(arr) {
   return result
 }
 
-
 //example with reduce
 function simpleArraySumExample2(arr) {
   const result = arr.reduce((acc, curr) => {
