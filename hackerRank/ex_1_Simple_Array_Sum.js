@@ -1,8 +1,11 @@
-// Given an array of integers, find the sum of its elements.
+/*
+  Link: https://www.hackerrank.com/challenges/simple-array-sum/problem?isFullScreen=true
 
-// For example,
-// const arr = [1, 2, 3], 
-// 1 + 2 + 3 = 5
+  Somar todos os items (números inteiros de um array)
+
+  Ex: const arr = [1, 2, 3], 
+  1 + 2 + 3 = 6
+*/
 
 const array = [1, 2, 3, 4, 10, 11]
 
@@ -28,3 +31,4 @@ function simpleArraySumExample2(arr) {
 
 console.log(simpleArraySumExample1(array))
 console.log(simpleArraySumExample2(array))
+// Resultado: 31

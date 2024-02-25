@@ -1,15 +1,15 @@
 /*
  link: https://www.hackerrank.com/challenges/plus-minus/problem?isFullScreen=true
 
-  1- Verificar quantos números positivos, negativos e zeros tem no array.
+  Verificar quantos números positivos, negativos e zeros tem no array.
 
-  2- Calcular essas quantidades divididos pelo tamanho do array, ex:
-     Em um array [1, 1, 0, -1], temos 2 positivos, 1 negativo e 1 zero entao os calculos serão
-     2/4 = 0,5  
-     1/4 = 0,25
-     1/4 = 0,25
+  Calcular essas quantidades divididos pelo tamanho do array, ex:
+  Em um array [1, 1, 0, -1], temos 2 positivos, 1 negativo e 1 zero entao os calculos serão
+    2/4 = 0,5  
+    1/4 = 0,25
+    1/4 = 0,25
   
-  3- O resultado tem que ter 6 casas decimais por ex: 2/4 = 0.500000
+  O resultado tem que ter 6 casas decimais por ex: 2/4 = 0.500000
 */
 
 const array = [-4, 3, -9, 0, 4, 1]
@@ -59,3 +59,10 @@ function plusMinus2(arr) {
 }
 
 plusMinus2(array)
+// Resultado:
+// 0.500000
+// 0.333333
+// 0.166667
+// 0.500000
+// 0.333333
+// 0.166667

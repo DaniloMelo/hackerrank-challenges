@@ -1,9 +1,9 @@
 /*
   Link: https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
 
-  1- Criar uma função que printa uma escada reversa
+  Criar uma função que printa uma escada reversa
 
-  2- A função recebe um argumento/ parametro que define o tamanho da escada
+  A função recebe um argumento/ parametro que define o tamanho da escada
   Ex: em uma função que recebe o argumento 4
      #
     ##
@@ -17,3 +17,11 @@ function stairCase(n) {
   }
 }
 stairCase(6)
+// Resultado:
+//     #
+//    ##
+//   ###
+//  ####
+// #####
+//######
+
