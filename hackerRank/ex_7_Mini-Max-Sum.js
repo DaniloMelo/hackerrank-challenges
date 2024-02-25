@@ -1,32 +1,61 @@
 /*
   link: https://www.hackerrank.com/challenges/mini-max-sum/problem?isFullScreen=true
 
-  Somar os items do array execeto o index, por exemplo
-  const array = [1, 2, 3, 4, 5] 
-  Somar tudo exceto 1, a soma é 2 + 3 + 4 + 5 = 14.
-  Somar tudo exceto 2, a soma é 1 + 3 + 4 + 5 = 13.
-  Somar tudo exceto 3, a soma é 1 + 2 + 4 + 5 = 12.
-  Somar tudo exceto 4, a soma é 1 + 2 + 3 + 5 = 11.
-  Somar tudo exceto 5, a soma é 1 + 2 + 4 + 4 = 10.  
+  Verificar qual é o menor e o maior numero do array
 
-  2- retornar o valor máximo e o minimo, neste caso seria max 14 e min 10
+  Somar o total do array menos o maior e o menor 
+  A menor soma são todos os numeros menos o maior numero
+  A maior soma são todos os numeros menos o menor numero
+
+  O retorno dever ser dois numeros, a menor soma e a maior soma
 */
 
-const array = [1, 2, 3, 4, 5]
+const array1 = [1, 2, 3, 4, 5]
+const array2 = [7, 69, 2, 221, 8974]
 
-function miniMaxSum(arr) {
-  let minSum = 0
-  let maxSum = 0
+// Exemplo com for
+function miniMaxSum1(arr) {
+  let min = arr[0]
+  let max = arr[0]
+  let sum = arr[0]
 
-  for (let i = 0; i < arr.length; i++) {
-    minSum += arr[i]
+  for (let i = 1; i < arr.length; i++) {
+    sum += arr[i]
+
+    if (arr[i] < min) {
+      min = arr[i]
+    } else if (arr[i] > max) {
+      max = arr[i]
+    }
   }
 
-  return minSum
+  return `${min} ${max} ${sum}`
+
+  // return `${sum - max} ${sum - min}`
 }
+console.log(miniMaxSum1(array1)) // 10 14
+console.log(miniMaxSum1(array2)) // 299 9271
 
-console.log(miniMaxSum(array))
 
+// Exemplo com forEach
+function miniMaxSum2(arr) {
+  let min = arr[0]
+  let max = arr[0]
+  let sum = 0
 
+  arr.forEach(num => {
+    sum += num
 
-// resultado tem que ser min 10 - max 14
+    if (num < min) {
+      min = num
+    }
+    if (num > max) {
+      max = num
+    }
+  })
+
+  return `${sum - max} ${sum - min}`
+}
+console.log(miniMaxSum2(array1)) // 10 14
+console.log(miniMaxSum2(array2)) // 299 9271
+
