@@ -29,9 +29,7 @@ function miniMaxSum1(arr) {
     }
   }
 
-  return `${min} ${max} ${sum}`
-
-  // return `${sum - max} ${sum - min}`
+  return `${sum - max} ${sum - min}`
 }
 console.log(miniMaxSum1(array1)) // 10 14
 console.log(miniMaxSum1(array2)) // 299 9271
