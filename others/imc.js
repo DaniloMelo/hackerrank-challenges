@@ -1,5 +1,4 @@
 /*
-
 O indice de massa corporal IMC pode ser calculado da seguinte forma:
 
 Índice de Massa Corporal – IMC = Massa (kg) ÷ Altura (m)².
@@ -16,25 +15,25 @@ Acima de 40 = obesidade grau III (mórbida).
 
 ***Em Js, temos o método Math.sqrt() para calcaular raizes quadradas.
 Para raizes cubicas, podemos usar o método de potência Math.pow(numero, 1/3)
-
 */
 
 
 function calcIMC(peso, altura) {
   const result = peso / (altura * altura)
 
-  switch (result.toFixed(2)) {
-    case result < 18.5:
-      console.log("abaixo do peso")
-      break
-    case result >= 18.5 || result <= 24.9:
-      console.log("Peso normal")
-      break
-    case result >= 20 || result <= 29.9:
-      console.log("sobrepeso")
-      break
+  if (result < 18.5) {
+    return `Abaixo do peso.`
+  } else if (result <= 24.9) {
+    return `Peso normal`
+  } else if (result <= 29.9) {
+    return `Sobrepeso`
+  } else if (result <= 34.99) {
+    return `Obesidade Grau I`
+  } else if (result <= 39.99) {
+    return `Obesidade Grau II (Severa)`
+  } else if (result >= 40) {
+    return `Obesidade Grau III (Mórbida)`
   }
 }
 
-// console.log(calcIMC(60, 1.65))
-calcIMC(60, 1.65)
+console.log(calcIMC(84, 1.60))
