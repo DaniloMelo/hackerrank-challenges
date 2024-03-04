@@ -5,10 +5,16 @@
 
   Contar quantas vezes este numero aparece no array e retornar este valor (inteiro)
 
-  OBS, para achar o maior número de um array, tem 3 formas.
+  OBS, para achar o maior e/ou menor número de um array, tem 3 formas.
   1 - Usar o laço for com if (ver ex_7)
+
   2 - usar o método sort() (ele ordena o array do menor para o maior)
+      Ex: const menor = arr.sort()[0]
+          const maior = arr.sort()[arr.length - 1]
+
   3 - usar o Math.max(...arr) (ele tem o mesmo efeito do sort)
+      Ex: const menor = Math.min(...arr)
+          const maior = Math.max(...arr)
 
   *Por algum motivo, usar o sort não passou em todos os testes, somente usando o Math.max
   sort() = organiza por ordem alfabetica ou numérica dependendo do conteudo do array, porem retorna em strings.

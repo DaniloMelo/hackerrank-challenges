@@ -42,19 +42,20 @@ function calcIMC(peso, altura, sexo) {
   }
 
   if (imc < 18.5) {
-    return `IMC: ${imc.toFixed(2)} Abaixo do peso. \nPeso ideal: ${pesoIdeal.toFixed(2)}`
+    return `IMC: ${imc.toFixed(2)} Abaixo do peso. \nPeso ideal: ${pesoIdeal.toFixed(3)} Kg`
   } else if (imc <= 24.9) {
-    return `IMC: ${imc.toFixed(2)} Peso normal. \nPeso ideal: ${pesoIdeal.toFixed(2)}`
+    return `IMC: ${imc.toFixed(2)} Peso normal. \nPeso ideal: ${pesoIdeal.toFixed(3)} Kg`
   } else if (imc <= 29.9) {
-    return `IMC: ${imc.toFixed(2)} Sobrepeso. \nPeso ideal: ${pesoIdeal.toFixed(2)}`
+    return `IMC: ${imc.toFixed(2)} Sobrepeso. \nPeso ideal: ${pesoIdeal.toFixed(3)} Kg`
   } else if (imc <= 34.99) {
-    return `IMC: ${imc.toFixed(2)} Obesidade Grau I. \nPeso ideal: ${pesoIdeal.toFixed(2)}`
+    return `IMC: ${imc.toFixed(2)} Obesidade Grau I. \nPeso ideal: ${pesoIdeal.toFixed(3)} Kg`
   } else if (imc <= 39.99) {
-    return `IMC: ${imc.toFixed(2)} Obesidade Grau II (Severa). \nPeso ideal: ${pesoIdeal.toFixed(2)}`
+    return `IMC: ${imc.toFixed(2)} Obesidade Grau II (Severa). \nPeso ideal: ${pesoIdeal.toFixed(3)} Kg`
   } else if (imc >= 40) {
-    return `IMC: ${imc.toFixed(2)} Obesidade Grau III (Mórbida). \nPeso ideal: ${pesoIdeal.toFixed(2)}`
+    return `IMC: ${imc.toFixed(2)} Obesidade Grau III (Mórbida). \nPeso ideal: ${pesoIdeal.toFixed(3)} Kg`
   }
 }
 
 console.log(calcIMC(84, 1.60, "M"))
+console.log(calcIMC(52, 1.48, "F"))
 
