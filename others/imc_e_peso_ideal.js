@@ -58,4 +58,3 @@ function calcIMC(peso, altura, sexo) {
 
 console.log(calcIMC(84, 1.60, "M"))
 console.log(calcIMC(52, 1.48, "F"))
-
