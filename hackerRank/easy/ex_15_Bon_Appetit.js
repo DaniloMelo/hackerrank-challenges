@@ -26,8 +26,6 @@ function bonAppetit(bill, k, b) {
   } else {
     return b - (totalBill - bill[k]) / 2
   }
-
-  // return b - (totalBill - bill[k]) / 2
 }
 
 console.log(bonAppetit([3, 10, 2, 9], 1, 12)) // retorna: 5
