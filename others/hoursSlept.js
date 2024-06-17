@@ -12,20 +12,27 @@ function hoursSlept(sleepTime, wakeUpTime) {
 
   const [hourWakeUpTime, minuteWakeUpTime] = wakeUpTime.split(":")
 
-  const hours = (24 * 60 - ((hourSleepTime * 60) - (hourWakeUpTime * 60))) / 60
+  // if(hourSleepTime > hourWakeUpTime){
+  //   const hours = (24 * 60 - ((hourSleepTime * 60) - (hourWakeUpTime * 60))) / 60
 
-  const minutes = minuteSleepTime - minuteWakeUpTime
+  //   const minutes = minuteSleepTime - minuteWakeUpTime
 
-  if (minutes < 0) {
+  //   if (minutes < 0) {
+  //     return `Horas dormidas = ${hours}:${Math.abs(minutes) < 10 ? '0' + Math.abs(minutes) : Math.abs(minutes)}`
+  //   } else {
+  //     return `Horas dormidas = ${hours}:${minutes < 0 ? '0' + minutes : minutes}`
+  //   }
+  // }
 
-    return `Horas dormidas = ${hours}:${Math.abs(minutes) < 10 ? '0' + Math.abs(minutes) : Math.abs(minutes)}`
-  } else {
-    return `Horas dormidas = ${hours} : ${minutes}`
+  if (hourSleepTime < hourWakeUpTime) {
+    const hours = (hourWakeUpTime * 60) - (hourSleepTime * 60)
+    // const asdasd = 24 * 60
+    return ((24 * 60) - hours) / 60
   }
 }
 
-console.log(hoursSlept("22:00", "05:30"))
-console.log(hoursSlept("22:50", "05:30"))
+// console.log(hoursSlept("22:00", "05:30"))
+// console.log(hoursSlept("22:50", "05:30"))
 console.log(hoursSlept("01:00", "09:00"))
 
 
