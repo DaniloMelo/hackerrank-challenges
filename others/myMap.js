@@ -1,8 +1,8 @@
 Array.prototype.myMap = function (callBackFn) {
   const newArray = []
 
-  for (let i = 0; i < this.length; i++) {  // this se refere ao array que estamos iterando. 
-    newArray.push(callBackFn(this[i], i, this))  //this[i] é i item do array, i é o index do array, this é o array completo.
+  for (let i = 0; i < this.length; i++) {  // `this` se refere ao array que estamos iterando. 
+    newArray.push(callBackFn(this[i], i, this))  // `this[i]` é o item atual do array. `i` é o index do item atual do array. `this` é o array completo.
   }
 
   return newArray
