@@ -18,42 +18,42 @@ Abaixo estão alguns dos tipos mais comuns de complexidade, organizados da mais 
 
 1. **O(1)** - Constante: O tempo de execução é constante, independentemente do tamanho da entrada. Exemplo: acessar diretamente um elemento de um array pelo índice.
 
-   Veja exemplos de códigos e mais explicações clicando [aqui](</src/bigO/O(1).ts>)
+   Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(1).ts>)
 
 &nbsp;
 
 2. **O(log n)** - Logarítmica: A complexidade aumenta logaritmicamente em relação ao tamanho da entrada. Algoritmos que dividem a entrada repetidamente, como a busca binária, têm essa complexidade.
 
-   Veja exemplos de códigos e mais explicações clicando [aqui]()
+   Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(log n).ts>)
 
 &nbsp;
 
 3. **O(n)** - Linear: O tempo de execução cresce linearmente com o tamanho da entrada. Exemplo: percorrer uma lista de elementos uma vez.
 
-   Veja exemplos de códigos e mais explicações clicando [aqui]()
+   Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(n).ts>)
 
 &nbsp;
 
 4.  **O(n log n)** - Um tipo comum de complexidade em algoritmos de ordenação eficientes, como mergesort e heapsort.
 
-    Veja exemplos de códigos e mais explicações clicando [aqui]()
+    Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(n log n).ts>)
 
 &nbsp;
 
 5.  **O(n²)** - Quadrática: O tempo de execução cresce proporcionalmente ao quadrado do tamanho da entrada. Exemplo: algoritmos de ordenação simples, como bubble sort e insertion sort.
 
-    Veja exemplos de códigos e mais explicações clicando [aqui]()
+    Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(n²).ts>)
 
 &nbsp;
 
 6. **O(2^n)** - Exponencial: O tempo de execução dobra a cada incremento do tamanho da entrada. Algoritmos de backtracking, como resolução de problemas de caminho, podem ter essa complexidade
 
-   Veja exemplos de códigos e mais explicações clicando [aqui]()
+   Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(2^n).ts>)
 
 &nbsp;
 
 7. **O(n!)** - Fatorial: Um dos piores casos de complexidade, geralmente visto em algoritmos que exploram todas as permutações possíveis, como alguns problemas de força bruta
 
-   Veja exemplos de códigos e mais explicações clicando [aqui]()
+   Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(n!).ts>)
 
 &nbsp;
