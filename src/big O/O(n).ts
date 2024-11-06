@@ -87,3 +87,7 @@ function fatorial2(x: number) {
 }
 
 console.log(fatorial2(5)) // O fatorial de 5! é = 120
+
+
+
+export { }
