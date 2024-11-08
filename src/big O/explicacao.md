@@ -57,3 +57,7 @@ Abaixo estão alguns dos tipos mais comuns de complexidade, organizados da mais 
    Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(n!).ts>)
 
 &nbsp;
+
+## Abaixo o gráfico ilustrando como cada complexidade escala:
+
+![](/src//big%20O/grafaico.png)
