@@ -34,7 +34,7 @@ Abaixo estão alguns dos tipos mais comuns de complexidade, organizados da mais 
 
 &nbsp;
 
-4.  **O(n log n)** - Um tipo comum de complexidade em algoritmos de ordenação eficientes, como mergesort e heapsort.
+4.  **O(n log n)** - Linear Logaritimico: Um tipo comum de complexidade em algoritmos de ordenação eficientes, como mergesort e heapsort.
 
     Veja exemplos de códigos e mais explicações clicando [aqui](</src/big O/O(n log n).ts>)
 
