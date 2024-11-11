@@ -1,28 +1,20 @@
 // link: https://www.astrolink.com.br/artigo/numerologia-do-nome
 
-/*
-  números mestres 11 e 22.
 
-  D A N I L O   M A R Q U E S   D E   M E L O
-  4 1 5 9 3 6   4 1 9 8 3 5 1   4 5   4 5 3 6  = 86 | 8 + 6 = 14 | 1 + 4 = 5
+interface IlettersAndNums {
+  [key: string]: number // index signature
+}
 
-  R A M I L D A   M A R Q U E S   D A   S I L V A  = 85 | 8 + 5 = 13 | 1 + 3 = 4
+interface IMeanings {
+  number: number;
+  meaning: string;
+  positiveAspects: string;
+  negativeAspects: string
+}
 
-  E L I A S   A L V E S   D E   M E L O  = 60 | 6 + 0 = 6
+const lettersAndNums: IlettersAndNums = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 1, k: 2, l: 3, m: 4, n: 5, o: 6, p: 7, q: 8, r: 9, s: 1, t: 2, u: 3, v: 4, w: 5, x: 6, y: 7, z: 8, }
 
-
-  Renato Brandao Martins Pinheiro Silva = 163
-
-
-  Simlando numero mestre 11
-  Danilo Marques de Melc = 83 | 8 + 3 = 11
-
-
-*/
-
-const lettersAndNums = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 1, k: 2, l: 3, m: 4, n: 5, o: 6, p: 7, q: 8, r: 9, s: 1, t: 2, u: 3, v: 4, w: 5, x: 6, y: 7, z: 8, }
-
-const meanings = [
+const meanings: IMeanings[] = [
   {
     number: 1,
     meaning: "É o Líder. Você veio para exercer a liderança e atrair seguidores. Tem o pensamento autocentrado, procurando a autopreservação. Deve desenvolver o seu EU INTERIOR, suas forças íntimas. Mantendo autoconfiança e determinação chegará longe. Mas precisará manter a humildade, pois a tendência em tornar-se egocêntrico é grande e isso lhe trará dissabores na vida. Sua independência e iniciativa servirão de inspiração a muitas pessoas. Pratique a sua habilidade em vencer e seja original, você veio para abrir os horizontes, por isso não tenha medo de ousar. Encare as situações com confiança e busque ser criativo.",
@@ -102,31 +94,83 @@ const meanings = [
 ]
 
 
+function numerologia(nome: string) {
+  const arrLetras = nome.toLowerCase().split("").filter(letter => letter != " ")
+  const arrNumerosDasLetras = arrLetras.map(letra => lettersAndNums[letra])
+  const primeiraSoma = arrNumerosDasLetras.reduce((curr, acc) => curr + acc, 0)
 
+  if (primeiraSoma === 11) {
+    return mostrarResultado(primeiraSoma)
+  }
 
-function firstFullNameSum(name) {
-  const lowerLetters = name.toLowerCase()
+  if (primeiraSoma === 22) {
+    return mostrarResultado(primeiraSoma)
+  }
 
-  const arrLetters = lowerLetters.split("")
+  const resultado = soma(primeiraSoma)
 
-  const arrLettersWithoutSpaces = arrLetters.filter(letter => letter !== " ")
+  return mostrarResultado(resultado)
+}
 
-  const arrNums = arrLettersWithoutSpaces.map(item => lettersAndNums[item])
+function soma(numero: number) {
+  const arrNumeros = numero.toString().split("").map(numStr => Number(numStr))
+  const reduzir = arrNumeros.reduce((curr, acc) => curr + acc, 0)
 
-  const firstSum = arrNums.reduce((acc, curr) => acc + curr, 0)
+  if (reduzir === 11) {
+    return 11
+  }
 
-  return firstSum
+  if (reduzir === 22) {
+    return 22
+  }
+
+  if ((reduzir !== 11 && reduzir !== 22) && (reduzir > 0 && reduzir <= 9)) {
+    return reduzir
+  }
+
+  return soma(reduzir)
+}
+
+function mostrarResultado(numero: number) {
+  const resultado = meanings.find(obj => obj.number === numero)
+  return resultado
 }
 
 
+console.log(numerologia("Danilo Marques de Melo"))
 
-function numsSeparator(num) {
-  const numToStr = num.toString() // converte o numero recebido por uma string
 
-  const strArr = numToStr.split("") // separa o numero do tipo string em um array = ["1", "2", "3"]
 
-  const strArrToNumArr = strArr.map(num => parseInt(num)) // converte o array acima em um array de numeros separados [ 1, 2, 3 ]
+/*
+  testes
 
-  return strArrToNumArr
-}
+  números mestres 11 e 22.
 
+  D A N I L O   M A R Q U E S   D E   M E L O
+  4 1 5 9 3 6   4 1 9 8 3 5 1   4 5   4 5 3 6  = 86 | 8 + 6 = 14 | 1 + 4 = 5
+
+  R A M I L D A   M A R Q U E S   D A   S I L V A  = 85 | 8 + 5 = 13 | 1 + 3 = 4
+
+  E L I A S   A L V E S   D E   M E L O  = 60 | 6 + 0 = 6
+
+
+  Renato Brandao Martins Pinheiro Silva = 163 | 1 + 6 + 3 = 10 | 1
+
+
+  Simlando numero mestre 11 e 22
+  Danilo Marques de Melc = 83 | 8 + 3 = 11
+
+  funcao main:
+  "AAA BBB CCC" = 18
+  "EEA" = 11  na primeira soma
+  "IID" = 22 na primeira soma
+
+  =====
+
+  funcao soma:
+    92 = 9 + 2 = 11 
+    5593 = 5 + 5 + 9 + 3 = 22
+    1+1 = 2
+    
+
+*/
