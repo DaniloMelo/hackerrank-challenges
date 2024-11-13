@@ -124,7 +124,11 @@ function soma(numero: number) {
     return 22
   }
 
-  if ((reduzir !== 11 && reduzir !== 22) && (reduzir > 0 && reduzir <= 9)) {
+  // if ((reduzir !== 11 && reduzir !== 22) && (reduzir > 0 && reduzir <= 9)) {
+  //   return reduzir
+  // }
+
+  if (reduzir > 0 && reduzir <= 9) {
     return reduzir
   }
 
@@ -171,6 +175,4 @@ console.log(numerologia("Danilo Marques de Melo"))
     92 = 9 + 2 = 11 
     5593 = 5 + 5 + 9 + 3 = 22
     1+1 = 2
-    
-
 */
