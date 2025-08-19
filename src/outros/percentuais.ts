@@ -15,6 +15,7 @@
   caso: Quanto é 7% de 15?
   formula 2: (porcentagem / 100) * valor
   ex: (7 / 100) * 15
+  reultado: 1.05
 
 */
 
