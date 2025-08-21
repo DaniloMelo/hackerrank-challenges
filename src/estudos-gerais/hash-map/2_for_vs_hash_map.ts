@@ -280,7 +280,7 @@ function intersectOptimized(nums1: number[], nums2: number[]): number[] {
 }
 console.log(intersectOptimized([1, 2, 2, 1], [2, 2])); // [2, 2]
 
-// ====================================================== EXEMPLO 5: Encontraondo o item mais repetido no array ==================================================================================
+// ====================================================== EXEMPLO 5: Encontrando o item mais repetido no array ==================================================================================
 
 /*
   O Problema: Dado um array de strings ou números, verifique o item que mais aparece. 
@@ -288,19 +288,66 @@ console.log(intersectOptimized([1, 2, 2, 1], [2, 2])); // [2, 2]
   Exemplo:
     arr = [1, 2, 3, 2, 1, 3, 2] Resposta: 2
 
-  
+  Solução com for aninhado (Ineficiente)
+  Uma abordagem menos eficiente seria usar loops aninhados. Para cada elemento, você percorreria o array inteiro novamente para contar suas ocorrências e manteria o controle da contagem máxima e do elemento correspondente.
+
+  Análise:
+    - Vantagem: A lógica é intuitiva e não exige estruturas de dados adicionais.
+    - Desvantagem: A complexidade de tempo é O(n^2), o que é inaceitável para arrays grandes. A cada iteração do loop externo, você executa um loop interno completo, levando a um número de operações quadrático em relação ao tamanho do array.  
 */
-function mostRepetitiveBruteForce(arr: number[] | string[]) {
-  return [1];
+function mostRepetitiveBruteForce(arr: string[] | number[]) {
+  let mostFindElement;
+  let finalMaxCount = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentCount = 0;
+
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        currentCount += 1;
+      }
+
+      if (currentCount > finalMaxCount) {
+        finalMaxCount = currentCount;
+        mostFindElement = arr[i];
+      }
+    }
+  }
+
+  return mostFindElement;
 }
 console.log(mostRepetitiveBruteForce([1, 2, 3, 2, 1, 3, 2])); // 2
 console.log(mostRepetitiveBruteForce(["a", "b", "c", "a", "c", "a"])); // "a"
 
 /*
-  Solução com hash map
+  Solução com Hash Map (Otimizada)
+  A abordagem com Hash Map é a maneira "correta" de resolver este problema em termos de eficiência. Ela usa duas passagens lineares para chegar à solução.
+
+  Primeira Passagem: Percorra o array e use um Hash Map para contar a frequência de cada elemento.
+  Segunda Passagem: Percorra o Hash Map e encontre o par de chave-valor com a maior contagem.
+
+  Análise:
+    - Vantagem: A complexidade de tempo é O(n). A primeira passagem é O(n) (para percorrer o array), e a segunda passagem é O(k) (para percorrer o Map), onde k é o número de elementos únicos, que é no máximo n. O resultado final é O(n). Isso é uma melhoria massiva de desempenho.
+    - Desvantagem: Consome memória adicional para armazenar o Map de frequências.
 */
-function mostRepetitiveBruteOptmized(arr: number[] | string[]) {
-  return [1];
+function mostRepetitiveBruteOptmized(arr: string[] | number[]) {
+  const counterElements = new Map<string | number, number>();
+
+  for (const item of arr) {
+    counterElements.set(item, (counterElements.get(item) || 0) + 1);
+  }
+
+  let count = 0;
+  let mostFindElement: string | number | null = null;
+
+  for (const [key, value] of counterElements) {
+    if (value > count) {
+      count = value;
+      mostFindElement = key;
+    }
+  }
+
+  return mostFindElement;
 }
 console.log(mostRepetitiveBruteOptmized([1, 2, 3, 2, 1, 3, 2])); // 2
 console.log(mostRepetitiveBruteOptmized(["a", "b", "c", "a", "c", "a"])); // "a"
