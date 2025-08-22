@@ -1,7 +1,7 @@
 /*
   Exemplos de abordagens onde o uso de Hash Map é melhor que for
 
-  Esse estudo foi feito usando Gemini. Acesse o chat: 
+  Esse estudo foi feito usando Gemini. Acesse o chat: https://g.co/gemini/share/fc48107727a6
 */
 
 // ================================================== EXEMPLO 1: Encontrando o Primeiro Caractere Não Repetido ==============================================================================
