@@ -21,9 +21,8 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 */
 
-function twoSum(nums: number[], target: number): number[] {
+function twoSum(nums: number[], target: number) {
   const map = new Map<number, number>();
-  let res: number[] = [];
 
   for (let i = 0; i < nums.length; i++) {
     const comp = target - nums[i];
@@ -31,14 +30,12 @@ function twoSum(nums: number[], target: number): number[] {
     // 1. Verificamos se o complemento já existe no mapa
     if (map.has(comp)) {
       // 2. Se sim, retornamos os dois índices
-      res = [map.get(comp)!, i];
+      return [map.get(comp)!, i];
     }
 
     // 3. Se não, adicionamos o número atual e seu índice ao mapa
     map.set(nums[i], i);
   }
-
-  return res;
 }
 
 console.log(twoSum([2, 7, 11, 15], 9)); // [0,1]
